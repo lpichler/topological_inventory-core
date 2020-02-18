@@ -1,7 +1,7 @@
 class CreateJoinTableServiceOfferingServiceCredentials < ActiveRecord::Migration[5.2]
   def change
     create_table :service_offering_service_credentials do |t|
-      t.references :tenant, :index => true, :null => false, :foreign_key => {:on_delete => :cascade}
+      t.references :tenant, :index => true, :foreign_key => {:on_delete => :cascade}
       t.references :service_credential, :null => false, :index => false, :foreign_key => {:on_delete => :cascade}
       t.references :service_offering, :null => false, :index => false, :foreign_key => {:on_delete => :cascade}
 
